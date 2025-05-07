@@ -1,0 +1,64 @@
+{
+  "routes": [
+    {
+      "route": "/static/*"
+    },
+    {
+      "route": "/assets/*"
+    },
+    {
+      "route": "/favicon.ico"
+    },
+    {
+      "route": "/manifest.json"
+    },
+    {
+      "route": "/logo192.png"
+    },
+    {
+      "route": "/logo512.png"
+    },
+    {
+      "route": "/.auth/*"
+    },
+    {
+      "route": "/",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/chatbot",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/compare-contract",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/bot-management",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/manage-clause",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/manage-contract",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/chat-contract",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html"
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
+    }
+  }
+  
+}
