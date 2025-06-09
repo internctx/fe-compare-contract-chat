@@ -1,57 +1,72 @@
 {
   "routes": [
     {
-      "route": "/static/*"
+      "route": "/static/*",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/assets/*"
+      "route": "/assets/*",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/favicon.ico"
+      "route": "/favicon.ico",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/manifest.json"
+      "route": "/manifest.json",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/logo192.png"
+      "route": "/logo192.png",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/logo512.png"
+      "route": "/logo512.png",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-      "route": "/.auth/*"
+      "route": "/.auth/*",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
       "route": "/",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/chatbot",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/compare-contract",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/bot-management",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/manage-clause",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/manage-contract",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/chat-contract",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/*",
-      "rewrite": "/index.html"
+      "rewrite": "/index.html",
+      "allowedRoles": ["authenticated"]
     }
   ],
   "responseOverrides": {
@@ -59,6 +74,18 @@
       "statusCode": 302,
       "redirect": "/.auth/login/aad"
     }
-  }
+  },
+
+  "auth": {
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/2c6ae73c-fd31-4e4a-88fc-24bcfcb2f5d0/v2.0",
+                    "clientIdSettingName": "AZURE_CLIENT_ID",
+                    "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
+                }
+            }
+        }
+    }
   
 }

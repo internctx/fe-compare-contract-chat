@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ManagementContractToProcess = () => {
-  const urlProcess = "https://chatcontractprocess-hdh0ckfgh4cdbtf6.southeastasia-01.azurewebsites.net"
-  // const urlProcess = "http://127.0.0.1:8003"
+  // const urlProcess = "https://chatcontractprocess-hdh0ckfgh4cdbtf6.southeastasia-01.azurewebsites.net"
+  const urlProcess = "http://127.0.0.1:8003"
   const navigate = useNavigate();
   const [onClose, setOnClose] = useState(false);
   const [fileToDelete, setFileToDelete] = useState("");
@@ -18,9 +18,6 @@ const ManagementContractToProcess = () => {
   const [data, setData] = useState({
     files: [],
   });
-  const handleBack = () => {
-    navigate("/chatbot");
-  };
   const handleToClause = () => {
     navigate("/manage-clause");
   };
@@ -184,18 +181,16 @@ const ManagementContractToProcess = () => {
   const handleToChatContract = () => {
     navigate("/chat-contract")
   }
+  const handleToCompareContract = () => {
+    navigate("/compare-contract")
+  }
   useEffect(() => {
     getBlobStorage();
   }, []);
   return (
     <div className="h-screen">
       <div className="h-[8%] flex w-full mb-2">
-        <button
-          className="p-4 border w-52 bg-blue-300 rounded-lg mt-1 font-medium ml-2 hover:bg-blue-500 hover:text-white"
-          onClick={handleBack}
-        >
-          Back to Chatbot
-        </button>
+    
         <div className="items-center text-4xl font-semibold flex w-full justify-center">
           <p>Manage Contract Process</p>
         </div>
@@ -233,6 +228,15 @@ const ManagementContractToProcess = () => {
             >
               <div>
                 <p>Chat Contract</p>
+              </div>
+            </div>
+            <div
+              className="p-4 h-fit m-3 rounded-md border bg-white items-center border-black shadow-2xl font-semibold text-lg
+                                    hover:cursor-pointer hover:bg-blue-300"
+              onClick={handleToCompareContract}
+            >
+              <div>
+                <p>Compare Two Contract</p>
               </div>
             </div>
           </div>

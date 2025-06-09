@@ -1,37 +1,17 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Login from "../compoments/Login";
-import ChatBot from "../compoments/ChatBot";
-// import PrivateRoute from "../compoments/PrivateRoutes";
-import BotManagement from "../compoments/BotManagement";
-import CompareContract from "../compoments/CompareContract";
-import ManagementClauseSample from "../compoments/ManagementClauseSample";
-import ManagementContractToProcess from "../compoments/ManagementContractToProcess";
-import ChatContract from "../compoments/ChatContract";
+import ManagementClauseSample from "../pages/ManagementClauseSample";
+import ManagementContractToProcess from "../pages/ManagementContractToProcess";
+import ChatContract from "../pages/ChatContract";
+import CompareContractNew from "../pages/CompareContractNew";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Navigate to="/chatbot" />,
-      },
-      {
-        path: '/login',
-        element: <Login />,
-      },
-      {
-        path: '/chatbot',
-        element: (
-            // <PrivateRoute>
-              <ChatBot />
-            // </PrivateRoute>
-          ),
-      }, 
-      {
-        path: 'bot-management',
-        element: <BotManagement/>
+        element: <Navigate to="/compare-contract" />,
       },
       {
         path:'compare-contract',
-        element: <CompareContract/>
+        element: <CompareContractNew/>
       },
       {
         path: 'manage-clause',
@@ -44,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: 'chat-contract',
         element: <ChatContract/>
-      }
+      },
 ])
 
 export default router

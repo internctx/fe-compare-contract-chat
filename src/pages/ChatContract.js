@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 import { TiDeleteOutline } from "react-icons/ti";
 import { MdOutlineCleaningServices } from "react-icons/md";
+import { toast } from "react-toastify";
 const ChatContract = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +29,8 @@ const ChatContract = () => {
   const [dropdown, setDropDown] = useState(false);
   const [documentID,setDocumentID] = useState("")
   const [documentName,setDocumentName] = useState("")
-  const urlProcess = "https://chatcontractprocess-hdh0ckfgh4cdbtf6.southeastasia-01.azurewebsites.net"
-  // const urlProcess = "http://127.0.0.1:8003"
+  // const urlProcess = "https://chatcontractprocess-hdh0ckfgh4cdbtf6.southeastasia-01.azurewebsites.net"
+  const urlProcess = "http://127.0.0.1:8003"
   const EXPIRATIONS_EXTRA = 24;
 
   const handleQueryChange = (event) => {
@@ -86,9 +87,9 @@ const ChatContract = () => {
   const handleToClause = () => {
     navigate("/manage-clause");
   };
-  const handleBack = () => {
-    navigate("/chatbot");
-  };
+  // const handleBack = () => {
+  //   navigate("/chatbot");
+  // };
   const handleToManagementContract = () => {
     navigate("/manage-contract");
   };
@@ -126,6 +127,7 @@ const ChatContract = () => {
       setDocumentID(resultData.doc_id)
     } catch (error) {
       console.log(error);
+      toast.error("Xin hãy chọn hợp đồng mà bạn muốn hỏi")
     } finally {
       setIsLoading(false);
       setStartNew(false);
@@ -171,7 +173,9 @@ const ChatContract = () => {
     setDocumentName(data.file_name.split("/")[1])
     setDropDown(false)
   }
-  
+  const handleToCompareTwoContract = () => {
+    navigate("/compare-contract");
+  };
   const handleNewChat = () => {
     setMessage([]);
     setStartNew(true);
@@ -207,15 +211,11 @@ const ChatContract = () => {
   return (
     <div className="h-screen">
       <div className="h-[8%] flex w-full mb-2">
-        <button
-          className="p-4 border w-52 bg-blue-300 rounded-lg mt-1 font-medium ml-2 hover:bg-blue-500 hover:text-white"
-          onClick={handleBack}
-        >
-          Back to Chatbot
-        </button>
+        
         <div className="items-center text-4xl font-semibold flex w-full justify-center">
           <p>Manage Contract Process</p>
         </div>
+        
         <div className="relative">
           <div
             className="p-2 border mr-4 mt-2 max-h-14 text-center flex hover:cursor-pointer items-center justify-center rounded-lg border-black font-semibold"
@@ -271,7 +271,16 @@ const ChatContract = () => {
                                           hover:cursor-pointer hover:bg-blue-300"
             >
               <div>
-                <p>Chat Contract</p>
+                <p>Chat Two Contract</p>
+              </div>
+            </div>
+            <div
+              className="p-4 h-fit m-3 rounded-md border bg-white items-center border-black shadow-2xl font-semibold text-lg
+                                    hover:cursor-pointer hover:bg-blue-300"
+              onClick={handleToCompareTwoContract}
+            >
+              <div>
+                <p>Compare Contract</p>
               </div>
             </div>
           </div>
