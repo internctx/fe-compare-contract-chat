@@ -5,7 +5,8 @@ import ResponseClause from "../compoments/ResponseClause";
 import { BsChatRightFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 const CompareContractNew = () => {
-  const url_compare = "http://127.0.0.1:8003";
+  const url_compare = "https://compare-contract-prod-f7b8d3b4bxgga4a7.southeastasia-01.azurewebsites.net"
+  // const url_compare = "http://127.0.0.1:8003";
   const navigate = useNavigate();
   const [content,setContent] = useState(null)
   const [dataOriginal, setDataOriginal] = useState(null);
