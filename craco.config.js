@@ -15,8 +15,8 @@ module.exports = {
         path: require.resolve('path-browserify'), // Gói npm polyfill
         crypto: require.resolve('crypto-browserify'), // Gói npm polyfill
         stream: require.resolve('stream-browserify'), // Gói npm polyfill
-        buffer: require.resolve('buffer/'), // Gói npm polyfill
-        process: require.resolve('process/browser'), // Gói npm polyfill
+        buffer: require.resolve('buffer'), // Gói npm polyfill
+        process: require.resolve('process'), // Gói npm polyfill
         // CÁC DÒNG SAU PHẢI ĐƯỢC BỎ HOẶC ĐẶT LÀ `false` NẾU CHÚNG GÂY LỖI:
         // util: require.resolve('util/'), // <-- Xóa dòng này hoặc đổi thành `util: false`
         // assert: require.resolve('assert/'), // <-- Xóa dòng này hoặc đổi thành `assert: false`
