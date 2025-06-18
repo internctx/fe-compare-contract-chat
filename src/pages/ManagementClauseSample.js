@@ -6,7 +6,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import "./style.css";
 import { FaUpload } from "react-icons/fa";
 const ManagementClauseSample = () => {
-  const urlProcess = "https://compare-contract-prod-f7b8d3b4bxgga4a7.southeastasia-01.azurewebsites.net"
+  const urlProcess = "https://compare-contract-dev-duaggrapf3cnhnbk.japaneast-01.azurewebsites.net"
   // const urlProcess = "http://127.0.0.1:8003";
 
   const [clause, setClause] = useState([]);
