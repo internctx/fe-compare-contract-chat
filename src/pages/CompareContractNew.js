@@ -73,7 +73,7 @@ const CompareContractNew = () => {
   const handleOpenChatBlock = () => {
     if(content !== null) {
       const isOpenBlock = !isOpen;
-    setIsOpen(isOpenBlock);
+      setIsOpen(isOpenBlock);
     }
   };
   const extractParagraphData = (fileData) => {
@@ -154,6 +154,8 @@ const CompareContractNew = () => {
       
     } catch (error) {
       toast.error(error)
+    } finally {
+      getCommentClause()
     }
   }
   useEffect(() => {
@@ -185,16 +187,12 @@ const CompareContractNew = () => {
         method: "GET"
       })
       const result = await response.json()
-      console.log(result.result_comment);
       
       setContent(result.result_comment)
     } catch (error) {
       console.log(error);
     }
   }
-    useEffect(() => {
-      getCommentClause()
-    }, [highlightTextOriginal]);
   const handleToClause = () => {
     navigate("/manage-clause");
   };
