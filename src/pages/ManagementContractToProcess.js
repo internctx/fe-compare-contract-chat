@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ManagementContractToProcess = () => {
-  const urlProcess = "https://compare-contract-dev-duaggrapf3cnhnbk.japaneast-01.azurewebsites.net"
+  const urlProcess = "https://compare-contract-dzhqg5h3bcfdbtab.southeastasia-01.azurewebsites.net"
   // const urlProcess = "http://127.0.0.1:8003"
   const navigate = useNavigate();
   const [onClose, setOnClose] = useState(false);
