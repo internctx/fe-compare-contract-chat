@@ -22,7 +22,7 @@ const BotManagement = () => {
   const [openDelete, setOpenDelete] = useState(false);
   const [fileToDelete, setFileToDelete] = useState("");
   // const [fileToDownload, setFileToDownload] = useState("")
-  const url = "https://contractprocess-bpeag9aad0c6a7du.southeastasia-01.azurewebsites.net"
+  const url = "https://compare-contract-dzhqg5h3bcfdbtab.southeastasia-01.azurewebsites.net"
   const handleLoadContainers = async () => {
     try {
       // Gọi API
