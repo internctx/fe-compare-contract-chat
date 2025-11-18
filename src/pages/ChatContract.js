@@ -29,7 +29,7 @@ const ChatContract = () => {
   const [dropdown, setDropDown] = useState(false);
   const [documentID,setDocumentID] = useState("")
   const [documentName,setDocumentName] = useState("")
-  const urlProcess = "be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net"
+  const urlProcess = "https://be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net/"
   // const urlProcess = "http://127.0.0.1:8003"
   const EXPIRATIONS_EXTRA = 24;
 

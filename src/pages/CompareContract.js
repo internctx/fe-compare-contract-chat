@@ -31,7 +31,7 @@ const CompareContract = () => {
   let renderTask = null;
   let renderTask2 = null;
 
-  const url = "be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net";
+  const url = "https://be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net/";
   // const url = "http://127.0.0.1:8001"
   const handleBack = () => {
     navigate("/chatbot");
