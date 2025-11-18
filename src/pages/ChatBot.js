@@ -32,7 +32,7 @@ const ChatBot = () => {
   const handleQueryChange = (event) => {
     setQuery(event.target.value);
   };
-  const urlBot = "https://be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net/"
+  const urlBot = "https://be-compare-contract-f5bdeghph0emcgdz.southeastasia-01.azurewebsites.net"
 
   // Get response of conversation chat
   const handleSubmit = async (event, suggestedOpen) => {
